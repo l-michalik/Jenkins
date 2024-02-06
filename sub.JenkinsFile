@@ -1,0 +1,18 @@
+pipeline {
+    agent none 
+
+    environment {
+      MY_ENV = "Devops"
+      GIT_COMMIT= "${COMMIT}"
+    }
+
+    stages {     
+        stage('Sub Jenkins Action') {
+            steps {
+                script {
+                    sh "echo Hello @MY_ENV"
+                }
+            }
+        }         
+    }
+}
