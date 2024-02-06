@@ -7,7 +7,7 @@ node {
     {
         script{
             git branch: "main", 
-                url: 'https://github.com/muratdemiray/jenkins-pipeline-load-devops.githttps://github.com/l-michalik/Jenkins.git'            
+                url: 'https://github.com/l-michalik/Jenkins.git'            
         }
     }
     
