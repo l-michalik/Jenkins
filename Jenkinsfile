@@ -1,4 +1,7 @@
 node {    
+    parameters {
+        string(defaultValue: '', description: 'Enter the shop name', name: 'SHOP_NAME')
+    }
     scmVars = checkout scm
 
     sh 'mkdir -p devops'
@@ -11,7 +14,7 @@ node {
     }
 
     script {
-      if(true){
+      if(params.SHOP_NAME == 'demoshop'){
         withEnv(["COMMIT=${scmVars.GIT_COMMIT}","BRANCH=${scmVars.GIT_BRANCH}"]) {    
           load 'demoshop.Jenkinsfile'  
         }
