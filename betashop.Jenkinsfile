@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {     
-        stage('DEMOSHOP [ACTION]') {
+        stage('BETASHOP [ACTION]') {
             steps {
                 script {
                     sh "echo SHOP NAME: $SHOP_NAME"

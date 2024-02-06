@@ -9,10 +9,16 @@ node {
                 url: 'https://github.com/l-michalik/Jenkins.git'            
         }
     }
-    
-    // pass the environment variables to new pipeline
-    withEnv(["COMMIT=${scmVars.GIT_COMMIT}","BRANCH=${scmVars.GIT_BRANCH}"]) {    
-        // load Jenkinsfile Pipeline file from devops repository     
-        load 'demoshop.Jenkinsfile'  
+
+    script {
+      if(true){
+        withEnv(["COMMIT=${scmVars.GIT_COMMIT}","BRANCH=${scmVars.GIT_BRANCH}"]) {    
+          load 'demoshop.Jenkinsfile'  
+        }
+      }else{
+        withEnv(["COMMIT=${scmVars.GIT_COMMIT}","BRANCH=${scmVars.GIT_BRANCH}"]) {    
+          load 'betashop.Jenkinsfile'  
+        }
+      }
     }
 } 
